@@ -1,8 +1,11 @@
+name: Perform Automatic Merge
+
 on:
   pull_request:
     types:
       - opened
       - synchronize
+
 jobs:
   merge:
     runs-on: ubuntu-latest
@@ -12,5 +15,4 @@ jobs:
 
       - name: Perform Automatic Merge
         run: |
-          gh pr merge 2 --merge merge
-
+          gh pr merge 2 --merge

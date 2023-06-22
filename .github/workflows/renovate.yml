@@ -15,5 +15,13 @@ jobs:
 
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          extends: "config:base"
+          baseBranches: "main"
+          packageFiles: "pom.xml"
+          automerge: true
+          automergeType: "pr"
+          commitMessagePrefix: "[git commit] "
+          commitMessageTopic: "Dependency Updates"
+          enableCommitAuthor: true
 
       

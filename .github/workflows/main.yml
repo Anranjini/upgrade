@@ -1,0 +1,15 @@
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Perform Automatic Merge
+        run: |
+          gh pr merge --merge merge --pr 2

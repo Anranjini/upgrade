@@ -13,10 +13,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      
-          
-
       - name: Perform Automatic Merge
-        run: |
-          export GH_TOKEN="${{ secrets.GITHUB_TOKEN }}"
-          gh pr merge 2 --merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr merge 2 --merge

@@ -18,7 +18,4 @@ jobs:
         with:
           java-version: '11'
 
-      - name: Run Renovate
-        uses: renovatebot/actions-setup@v3
-        with:
-          config-name: renovate.json
+      

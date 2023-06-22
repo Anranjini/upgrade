@@ -13,6 +13,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Set up GitHub CLI
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Perform Automatic Merge
         run: |
+          export GH_TOKEN="${{ secrets.GITHUB_TOKEN }}"
           gh pr merge 2 --merge

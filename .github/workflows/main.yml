@@ -16,4 +16,4 @@ jobs:
       - name: Perform Automatic Merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh pr merge 2 --merge
+        run: gh pr squash 2 --merge
